@@ -9,13 +9,18 @@ load_dotenv()
 
 api_url = os.getenv('API_URL')
 
-@app.route("/")
+
+@app.route("/", defaults={"path": ""})
 def client():
     return send_from_directory('client/public', 'index.html')
 
 @app.route("/<path:path>")
-def base(path):
+def serve_static(path):
     return send_from_directory('client/public', path)
+
+
+
+
 
 # API endpoint for Svelte to communicate with.
 @app.route('/say-hi', methods=['POST'])
@@ -24,7 +29,6 @@ def say_hi():
     name = data.get('name')
     response_data = {'message': f'Hello {name}'}
     return jsonify(response_data)
-
 
 if __name__ == '__main__':
     app.run(host='localhost', port=2000, debug=True)

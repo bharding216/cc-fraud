@@ -1,4 +1,3 @@
-<!-- About.svelte -->
 <script>
     
 </script>

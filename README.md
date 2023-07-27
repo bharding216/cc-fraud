@@ -1,10 +1,6 @@
 <h1>Credit Card Fraud Detection Application</h1>
 <h2>Description</h2>
 
-<p>There are 30 variables in this dataset, and the 
-features have been encrypted to protect cardholder privacy.
-</p>
-
 <p>
 This is a classification-type ML problem where transactions are classified as fraudulent or not fraudulent.
 </p>

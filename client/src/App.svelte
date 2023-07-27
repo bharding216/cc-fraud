@@ -1,5 +1,7 @@
 <script>
-	import { Route, Router } from 'svelte-routing';
+	import { Route, Router } from 'svelte-routing'; // For client-side routing.
+	// https://www.npmjs.com/package/svelte-routing for the docs.
+	import NotFound from './NotFound.svelte'; // Import the NotFound component
 	import About from './About.svelte';
 	import Layout from './Layout.svelte';
 	export let api_url;
@@ -31,10 +33,9 @@
 </script>
 
 
-
-<Router>
-	<Layout>
-		<Route path="/" let:params>
+<Router> <!-- Handles client side navigation -->
+	<Layout> <!-- Uses the Layout component that was imported above -->
+		<Route path="/"> <!-- Defining the home page content -->
 			{#if serverResponse}
 			<h1>Received Message: {serverResponse}!</h1> 
 			{:else}
@@ -47,6 +48,8 @@
 			<button on:click={getName} disabled={!enteredName.trim()}>Submit</button>
 		</Route>
 
-		<Route path="/about" component={About} />
+		<Route path="/about" component={About} /> <!-- Tells Svelte that the About component is to be loaded at the ''/about' url path -->
+	    <Route path="*" component={NotFound} />
 	</Layout>
 </Router>
+
