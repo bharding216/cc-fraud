@@ -10,6 +10,6 @@ This is a classification-type ML problem where transactions are classified as fr
 </p>
 
 <p>
-This application uses Svelte for the frontend and Flask for the backend APIs. It is depployed through AWS Elastic Beanstalk, and SageMaker was used to deploy the ML model. 
+This application uses Svelte for the frontend and Flask for the backend APIs. It is deployed through AWS Elastic Beanstalk, and SageMaker was used to deploy the ML model. 
 </p>
 
