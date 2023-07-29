@@ -6,6 +6,8 @@
 
 </style>
 
-<h1>A Contact Page</h1>
+<div class="mb-3">
+  <h1>A Contact Page</h1>
+</div>
 
 <ContactForm />

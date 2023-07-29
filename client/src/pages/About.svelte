@@ -17,8 +17,9 @@
 </script>
 
 {#if appLoaded}
-    <h1>About Us</h1>
+    <h1 class="mb-3">About Us</h1>
     <p>Welcome to our website!</p>
+    <p>Don't worry, that loading screen was intended. Your site is actually super fast 😎</p>
 {:else}
     <Loading />
 {/if}

@@ -1,4 +1,5 @@
 <script>
+    import { capitalizeFirstLetter } from '../../helpers';
     export let api_url;
 
     // to get a variable from .env:
@@ -7,16 +8,12 @@
     let serverResponse = ''; // The response received from the server.
     let error = '';
 
-    function capitalizeFirstLetter(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
     async function getName() {
         // Regular expression to validate the input (only letters allowed)
         const lettersOnlyPattern = /^[A-Za-z]+$/;
 
         if (!lettersOnlyPattern.test(enteredName)) {
-            error = 'Name must contain only letters (no numbers)';
+            error = 'Name must contain only letters (no numbers or symbols)';
             return;
         } else {
             error = '';
@@ -61,7 +58,7 @@
 {/if}
 
 <div class='row'>
-    <div class='col-4'>
+    <div class='col-6'>
         <form on:submit|preventDefault={getName}>
             <div class='form-group mb-3'>
                 <input type="text" name="username" 
@@ -78,5 +75,7 @@
 </div>
 
 {#if error}
-<p class="error">{error}</p>
+<div class="my-2">
+    <p class="error">{error}</p>
+</div>
 {/if}
