@@ -1,0 +1,30 @@
+<!-- Loading.svelte -->
+<style>
+    /* Add your custom styles for the loading page here */
+    .loading-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      background-color: #f0f0f0;
+    }
+  
+    .loading-spinner {
+      border: 4px solid rgba(0, 0, 0, 0.3);
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+  
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  
+  <div class="loading-container">
+    <div class="loading-spinner"></div>
+  </div>
+  
